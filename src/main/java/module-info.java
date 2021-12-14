@@ -16,4 +16,6 @@ module com.example.kurwailemozna {
 
     opens com.example.kurwailemozna to javafx.fxml;
     exports com.example.kurwailemozna;
+    exports com.example.kurwailemozna.controllers;
+    opens com.example.kurwailemozna.controllers to javafx.fxml;
 }

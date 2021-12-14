@@ -21,13 +21,33 @@
      <tabs>
        <Tab text="Song Request">
             <content>
-               <VBox prefHeight="200.0" prefWidth="100.0">
+               <VBox prefHeight="551.0" prefWidth="1240.0">
                   <children>
                      <TextField fx:id="searchField" prefHeight="25.0" prefWidth="330.0" promptText="Fill with the song you're looking for" />
-                     <Button fx:id="searchButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onSearchButtonClick" text="Search">
-                        <cursor>
-                           <Cursor fx:constant="HAND" />
-                        </cursor></Button>
+                     <Pane prefHeight="17.0" prefWidth="1240.0" />
+                     <HBox prefHeight="33.0" prefWidth="1240.0">
+                        <children>
+                           <Pane prefHeight="33.0" prefWidth="305.0" />
+                           <Button fx:id="searchButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onSearchButtonClick" prefHeight="30.0" prefWidth="101.0" stylesheets="@style.css" text="Search">
+                              <cursor>
+                                 <Cursor fx:constant="HAND" />
+                              </cursor>
+                           </Button>
+                           <Pane prefHeight="33.0" prefWidth="161.0" />
+                           <Button fx:id="nextbutton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onNextButtonClick" prefHeight="37.0" prefWidth="95.0" stylesheets="@style.css" text="Next">
+                              <cursor>
+                                 <Cursor fx:constant="HAND" />
+                              </cursor>
+                           </Button>
+                           <Pane prefHeight="33.0" prefWidth="161.0" />
+                           <Button fx:id="clearButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onClearButtonClick" prefHeight="37.0" prefWidth="95.0" stylesheets="@style.css" text="Clear Queue">
+                              <cursor>
+                                 <Cursor fx:constant="HAND" />
+                              </cursor>
+                           </Button>
+                           <Pane prefHeight="33.0" prefWidth="313.0" />
+                        </children>
+                     </HBox>
                   
                       <Label fx:id="welcomeText" />
                      <HBox prefHeight="301.0" prefWidth="1240.0">

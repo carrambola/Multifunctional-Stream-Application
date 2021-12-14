@@ -31,7 +31,7 @@ public class HelloController implements Initializable {
     public void onSearchButtonClick() {
         title = searchField.getText();
         title = title.replace(" ", "+");
-        String u = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&order=viewCount&q=" + title + "&key=AIzaSyCd2rH36V2NhNmzYLTIvni4IKdJuJYxffI";
+        String u = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&order=relevance&q=" + title + "&key=AIzaSyCd2rH36V2NhNmzYLTIvni4IKdJuJYxffI";
         Document doc = null;
         try {
             doc = Jsoup.connect(u).timeout(10 * 1000).ignoreContentType(true).get();
@@ -47,6 +47,14 @@ public class HelloController implements Initializable {
         webView.setVisible(true);
         webView.getEngine().load("https://www.youtube.com//watch?v=" + vidId);
         System.out.println(title);
+
+    }
+
+    public void onNextButtonClick(){
+
+    }
+
+    public void onClearButtonClick(){
 
     }
 

@@ -1,25 +1,22 @@
 package com.example.kurwailemozna.player.UIfunctionalities;
 
 import com.example.kurwailemozna.player.Playlist;
+import com.example.kurwailemozna.player.Song;
 import com.example.kurwailemozna.player.google.GoogleSearch;
+import com.example.kurwailemozna.player.google.GoogleVideo;
 import javafx.scene.web.WebView;
 
 import java.util.Map;
 
-public class SearchButton implements Button{
-    WebView webView;
-    @Override
-    public void onClick(Map<String, String> parameters) {
+public class SearchButton extends Button{
+    Boolean validated;
+    public Song onClick(String searchPhrase) {
         GoogleSearch googleSearch = new GoogleSearch();
-        webView.setVisible(true);
-        webView.getEngine().load("https://www.youtube.com/watch?v=" + googleSearch
-                .requestSetup(parameters.get("vidId"))
-                .executeRequest()
-                .getSpecificData("vidId"));
-        Playlist.addToQueue(googleSearch.getSpecificData("title"), googleSearch.getSpecificData("vidId"));
-    }
-    public SearchButton setWebView(WebView webView) {
-        this.webView = webView;
-        return this;
+        googleSearch
+                .requestSetup(searchPhrase)
+                .executeRequest();
+        GoogleVideo videoSearch = new GoogleVideo();
+        videoSearch.requestSetup(googleSearch.getSpecificData("vidId")).executeRequest();
+        return new Song(googleSearch.getSpecificData("title"), googleSearch.getSpecificData("vidId"), Integer.parseInt(videoSearch.getSpecificData("length")));
     }
 }

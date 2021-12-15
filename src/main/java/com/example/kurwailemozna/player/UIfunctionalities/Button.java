@@ -1,7 +1,10 @@
 package com.example.kurwailemozna.player.UIfunctionalities;
 
-import java.util.Map;
+import com.example.kurwailemozna.player.google.GoogleSearch;
+import javafx.scene.web.WebView;
 
-public interface Button {
-    void onClick(Map<String, String> parameters);
+public abstract class Button {
+    WebView view;
+    GoogleSearch search;
+
 }

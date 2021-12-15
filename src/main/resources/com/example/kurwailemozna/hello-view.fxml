@@ -4,6 +4,7 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TextField?>
@@ -27,25 +28,31 @@
                      <Pane prefHeight="17.0" prefWidth="1240.0" />
                      <HBox prefHeight="33.0" prefWidth="1240.0">
                         <children>
-                           <Pane prefHeight="33.0" prefWidth="305.0" />
+                           <Pane prefHeight="33.0" prefWidth="264.0" />
                            <Button fx:id="searchButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onSearchButtonClick" prefHeight="30.0" prefWidth="101.0" stylesheets="@style.css" text="Search">
                               <cursor>
                                  <Cursor fx:constant="HAND" />
                               </cursor>
                            </Button>
-                           <Pane prefHeight="33.0" prefWidth="161.0" />
-                           <Button fx:id="nextbutton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onNextButtonClick" prefHeight="37.0" prefWidth="95.0" stylesheets="@style.css" text="Next">
+                           <Pane prefHeight="33.0" prefWidth="126.0" />
+                           <Button fx:id="nextBut" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onNextButtonClick" prefHeight="37.0" prefWidth="95.0" stylesheets="@style.css" text="Next">
                               <cursor>
                                  <Cursor fx:constant="HAND" />
                               </cursor>
                            </Button>
-                           <Pane prefHeight="33.0" prefWidth="161.0" />
-                           <Button fx:id="clearButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onClearButtonClick" prefHeight="37.0" prefWidth="95.0" stylesheets="@style.css" text="Clear Queue">
+                           <Pane prefHeight="33.0" prefWidth="126.0" />
+                           <Button fx:id="clrBut" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onClearButtonClick" prefHeight="37.0" prefWidth="95.0" stylesheets="@style.css" text="Clear Queue">
                               <cursor>
                                  <Cursor fx:constant="HAND" />
                               </cursor>
                            </Button>
-                           <Pane prefHeight="33.0" prefWidth="313.0" />
+                           <Pane prefHeight="33.0" prefWidth="126.0" />
+                           <Button fx:id="addToQueueButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onAddToQueueButtonClick" prefHeight="36.0" prefWidth="95.0" stylesheets="@style.css" text="Add to queue">
+                              <cursor>
+                                 <Cursor fx:constant="HAND" />
+                              </cursor>
+                           </Button>
+                           <Pane prefHeight="33.0" prefWidth="264.0" />
                         </children>
                      </HBox>
                   
@@ -55,6 +62,7 @@
                            <Pane prefHeight="301.0" prefWidth="800.0" />
                            <WebView fx:id="webView" prefHeight="202.0" prefWidth="915.0" visible="false" />
                            <Pane prefHeight="301.0" prefWidth="800.0" />
+                           <ListView fx:id="listView" prefHeight="200.0" prefWidth="800.0" />
                         </children>
                      </HBox>
                   </children>

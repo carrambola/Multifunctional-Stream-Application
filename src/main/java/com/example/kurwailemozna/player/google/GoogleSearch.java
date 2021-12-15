@@ -19,22 +19,13 @@ public class GoogleSearch implements GoogleAPI {
         return this;
     }
 
-    @Override
-    public GoogleAPI executeRequest() {
-        try {
-            doc = Jsoup.connect(url).timeout(10 * 1000).ignoreContentType(true).get();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return this;
-    }
-
     private String getVidIdAndFlush() {
         JSONObject object = new JSONObject(doc.text());
         JSONArray array = object.getJSONArray("items");
         this.flush();
         return array.getJSONObject(0).getJSONObject( "id").getString("videoId");
     }
+
     private String getTitleAndFlush(){
         JSONObject object = new JSONObject(doc.text());
         JSONArray array= object.getJSONArray("items");

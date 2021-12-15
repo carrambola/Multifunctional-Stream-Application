@@ -12,6 +12,8 @@ module com.example.kurwailemozna {
     requires okhttp3;
     requires org.json;
     requires org.jsoup;
+    requires java.xml.bind;
+    requires java.desktop;
 
 
     opens com.example.kurwailemozna to javafx.fxml;

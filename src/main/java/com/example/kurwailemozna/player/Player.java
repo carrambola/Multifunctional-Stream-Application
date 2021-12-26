@@ -4,8 +4,6 @@ import javafx.application.Platform;
 import javafx.scene.web.WebView;
 
 import javax.swing.Timer;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Player {
